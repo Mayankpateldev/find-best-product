@@ -1,0 +1,61 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Recommend headphones.",
+      "description": "You need to consider how to invest your money to maximise your profit."
+    },
+    "host": "localhost:3000",
+    "basePath": "/recommend",
+    "tags": [
+      {
+        "name": "Recommend",
+        "description": "API for recommend"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/": {
+        "get": {
+          "tags": [
+            "Recommend"
+          ],
+          "description": "Suppose you have $50,000 in cash, your goal is to develop a REST API backend that can recommend headphones you should buy on Head-Fi, with the pure interest of selling them in the future to make money. You need to consider how to invest your money to maximise your profit.",          
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "header",
+              "name": "cash",
+              "description": "cash (By default will take 50000)",
+              "required": true,              
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          ],         
+        "responses": {
+            "200": {
+              "description": "Successfully check records"            
+            },
+            "422" : {
+                "description": "Validation error"
+            },
+            "404": {
+                "description": "No data found"
+            }
+          }
+        }       
+      }      
+    }
+  }
